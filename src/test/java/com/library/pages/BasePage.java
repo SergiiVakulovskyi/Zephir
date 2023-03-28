@@ -27,10 +27,39 @@ public abstract  class BasePage {
     @FindBy(linkText = "Log Out")
     public WebElement logOutLink;
 
+    @FindBy(xpath = "//i[@class='fa fa-book']")
+    public WebElement booksPageLink;
+
+    @FindBy(xpath = "//i[@class='fa fa-user']")
+    public WebElement userPageLink;
+
+    @FindBy(xpath = "//i[@class='fa fa-home']")
+    public WebElement dashboardPageLink;
+
+    public void booksPage(String page){
+
+        booksPageLink.click();
+
+    }
+
+    public void userPage(String page){
+
+        userPageLink.click();
+
+    }
+
+    public void dashboardPage(String page){
+
+        dashboardPageLink.click();
+
+    }
+
     public void logOut(){
         accountHolderName.click();
         logOutLink.click();
     }
+
+    //i[@class='fa fa-book']
 
     public void navigateModule(String moduleName){
         Driver.getDriver().findElement(By.xpath("//span[@class='title'][.='"+moduleName+"']")).click();
